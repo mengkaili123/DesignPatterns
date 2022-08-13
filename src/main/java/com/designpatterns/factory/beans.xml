@@ -1,0 +1,10 @@
+<beans>
+    <bean id="reteLimiter" class="com.designpatterns.factory.RateLimiter">
+        <construcotor-arg ref="redisCounter"/>
+    </bean>
+
+    <bean id = "redisCounter" class="com.designpatterns.factory.redisCounter" scope="singleton" lazy-init="true">
+        <construcotor-arg type="String" value="127.0.0.1"/>
+        <construcotor-arg type="int" value="1234"/>
+    </bean>
+</beans>
